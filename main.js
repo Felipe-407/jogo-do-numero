@@ -19,3 +19,5 @@ function verificarPalpite() {
         ultimoResultado.textContent = "Parabéns! você Acertou!";
     }
 }
+
+
