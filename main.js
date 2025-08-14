@@ -1,10 +1,11 @@
-
+let numeroAleatorio = math.tloor(math.radom() *100) + 1;
 const palpites = document.querySelector('.palpites');
 const ultimoResultado = document.querySelector('.ultimoResultado');
 const baixoOuAlto = document.querySelector('.baixoOuAlto');
 const envioPalpite = document.querySelector('.envioPalpite');
 const campoPalpite = document.querySelector('.campoPalpite');
-
+let contagemPalpites = 1;
+let botaoReiniciar;
 
 
 function verificarPalpite() {
@@ -19,7 +20,20 @@ function verificarPalpite() {
         ultimoResultado.textContent = "Parabéns! você Acertou!";
     baixoOuAlto.textContent = "";
   finalizarJogo();
-}
+} else if (contagemPalpites == 10) {
+        ultimoResultado.textcontent = "FIM DE JOGO!!";
+        baixoOuAlto.textcontent = "";
+        finalizarJogo();
+    } else {
+        ultimoResultado.textContent = "Errado";
+        ultimoResultado.style.backgroundColor = "red";
+        if (palpiteUsuario < numeroAleatorio) {
+            baixoOuAlto.textContent = "O último palpite foi muito baixo";
+        } else if (palpiteUsuario > numeroAleatorio) {
+            baixoOuAlto.textContent = "O último palpite foi muito alto";
+        }
+    }
+            
 
 
 
