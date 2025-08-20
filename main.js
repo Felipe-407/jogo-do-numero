@@ -14,7 +14,7 @@ function verificarPalpite() {
         palpites.textContent = "palpites anteriores: ";
     }
 
-    palpites textContent += palpiteUsuario + " ";
+    palpites.textContent += palpiteUsuario + " ";
 
     if (palpiteUsuario === numeroAleatorio) {
         ultimoResultado.textContent = "Parabéns! você Acertou!";
@@ -64,10 +64,8 @@ function reiniciarJogo() {
     campoPalpite.value = "";
     campoPalpite.focus();
     ultimoResultado.style.backgroundColor = 'white';
-    numeroAleatorio = math.floor(math.random() * 100) + 1;
+    numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 }
-
-} 
 
 
 
